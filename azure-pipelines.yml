@@ -17,7 +17,7 @@ steps:
     goals: 'package'
 - task: Docker@2
   inputs:
-    containerRegistry: 'docker-hub-edburns0docker'
+    containerRegistry: 'edburns0docker'
     repository: 'edburns0docker/azure-cafe'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
