@@ -26,14 +26,14 @@ steps:
   continueOnError: true
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'azure-cafe-cluster'
+    kubernetesServiceEndpoint: 'azure-cafe-cluster-ejb1203p'
     command: 'delete'
     useConfigurationFile: true
     configuration: 'azure-cafe.yml'
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'azure-cafe-cluster'
+    kubernetesServiceEndpoint: 'azure-cafe-cluster-ejb1203p'
     command: 'create'
     useConfigurationFile: true
     configuration: 'azure-cafe.yml'
