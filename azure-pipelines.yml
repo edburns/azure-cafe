@@ -17,8 +17,8 @@ steps:
     goals: 'package'
 - task: Docker@2
   inputs:
-    containerRegistry: 'docker-hub-rezarahman'
-    repository: 'rezarahman/azure-cafe'
+    containerRegistry: 'edburns0docker'
+    repository: 'edburns0docker/azure-cafe'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 'v3'
@@ -26,17 +26,17 @@ steps:
   continueOnError: true
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'azure-cafe-cluster'
+    kubernetesServiceEndpoint: 'azure-cafe-cluster-ejb1203p'
     command: 'delete'
     useConfigurationFile: true
     configuration: 'azure-cafe.yml'
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'azure-cafe-cluster'
+    kubernetesServiceEndpoint: 'azure-cafe-cluster-ejb1203p'
     command: 'create'
     useConfigurationFile: true
     configuration: 'azure-cafe.yml'
     forceUpdateConfigMap: true
     configMapName: 'application-insights-key'
-    configMapArguments: '--from-literal=APPLICATION_INSIGHTS_KEY=4cab0697-d1fb-436e-84b4-bc5a9c4ea0ed'
+    configMapArguments: '--from-literal=APPLICATION_INSIGHTS_KEY=8360b67f-52a4-4a5a-a2e4-bbf72d78409e'
